@@ -3,110 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vero Financial | Embedded Finance Infrastructure</title>
+    <title>Vero Financial | Embedded Finance Infrastructure for Modern Platforms</title>
+    <meta name="description" content="Launch bank accounts, cards, and payments in weeks, not months. Vero handles the complexity of financial infrastructure so you can focus on your product.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%236366f1' width='32' height='32' rx='8'/><text x='50%' y='55%' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>V</text></svg>">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .gradient-bg { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15); }
+        .hero-gradient { background: linear-gradient(180deg, #fafafa 0%, #f3f4f6 100%); }
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow { box-shadow: 0 0 40px rgba(99, 102, 241, 0.3); }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Announcement Bar -->
+    <div class="bg-indigo-600 text-white text-center py-2 text-sm">
+        <span class="font-medium">🎉 Vero raised $42M Series B</span> — <a href="#" class="underline hover:no-underline">Read more</a>
+    </div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="index.html" class="flex items-center space-x-2">
-                <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                <div class="w-9 h-9 gradient-bg rounded-lg flex items-center justify-center shadow-sm">
                     <span class="text-white font-bold text-lg">V</span>
                 </div>
-                <span class="text-xl font-semibold text-gray-900">Vero Financial</span>
+                <span class="text-xl font-semibold text-gray-900">Vero<span class="text-indigo-600">Financial</span></span>
             </a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#products" class="text-gray-600 hover:text-gray-900 transition">Products</a>
-                <a href="about.html" class="text-gray-600 hover:text-gray-900 transition">About</a>
+                <div class="relative group">
+                    <button class="text-gray-600 hover:text-gray-900 transition flex items-center gap-1">
+                        Products
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                </div>
+                <a href="#developers" class="text-gray-600 hover:text-gray-900 transition">Developers</a>
+                <a href="about.html" class="text-gray-600 hover:text-gray-900 transition">Company</a>
+                <a href="#pricing" class="text-gray-600 hover:text-gray-900 transition">Pricing</a>
                 <a href="careers.html" class="text-gray-600 hover:text-gray-900 transition">Careers</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900 transition">Docs</a>
-                <a href="#" class="gradient-bg text-white px-4 py-2 rounded-lg font-medium hover:opacity-90 transition">Get Started</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-gray-900 transition hidden md:block">Sign in</a>
+                <a href="#" class="gradient-bg text-white px-5 py-2.5 rounded-lg font-medium hover:opacity-90 transition shadow-sm">
+                    Get Started
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="max-w-3xl">
-                <div class="inline-flex items-center space-x-2 bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm font-medium mb-6">
-                    <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
-                    <span>Now SOC 2 Type II Certified</span>
+    <section class="hero-gradient pt-20 pb-32 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium mb-8">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        </span>
+                        <span>Now SOC 2 Type II & PCI-DSS Level 1 Certified</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-6">
+                        Embedded finance <span class="text-gradient">infrastructure</span> for modern platforms
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+                        Launch bank accounts, cards, and payments in weeks, not months. Vero handles the complexity so you can focus on your product.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="gradient-bg text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition text-center shadow-lg shadow-indigo-500/25">
+                            Start Building for Free
+                        </a>
+                        <a href="#" class="flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Watch Demo
+                        </a>
+                    </div>
+                    <div class="mt-10 flex items-center gap-6 text-sm text-gray-500">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            No credit card required
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            Sandbox in 5 minutes
+                        </div>
+                    </div>
                 </div>
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    Embedded finance infrastructure for modern platforms
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Launch bank accounts, cards, and payments in weeks, not months. Vero handles the complexity of financial infrastructure so you can focus on your product.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#" class="gradient-bg text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition text-center">
-                        Start Building →
-                    </a>
-                    <a href="#" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition text-center">
-                        View Documentation
-                    </a>
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-2xl p-6 border border-gray-100 glow">
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            <span class="text-xs text-gray-400 ml-2">api.verofinancial.com</span>
+                        </div>
+                        <pre class="text-sm text-gray-800 font-mono overflow-x-auto"><code class="language-javascript"><span class="text-purple-600">const</span> account = <span class="text-purple-600">await</span> vero.accounts.<span class="text-blue-600">create</span>({
+  <span class="text-green-600">type</span>: <span class="text-amber-600">'checking'</span>,
+  <span class="text-green-600">currency</span>: <span class="text-amber-600">'USD'</span>,
+  <span class="text-green-600">holder</span>: {
+    <span class="text-green-600">name</span>: <span class="text-amber-600">'Acme Corp'</span>,
+    <span class="text-green-600">type</span>: <span class="text-amber-600">'business'</span>
+  }
+});
+
+<span class="text-gray-500">// Account created in 200ms</span>
+<span class="text-purple-600">console</span>.<span class="text-blue-600">log</span>(account.id);
+<span class="text-gray-500">// → "acc_7xK2mNvQp9..."</span></code></pre>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Logos Section -->
-    <section class="py-12 border-y border-gray-100 bg-gray-50/50">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="text-center text-gray-500 text-sm mb-8">Trusted by innovative companies</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60">
-                <span class="text-2xl font-semibold text-gray-400">TechCorp</span>
-                <span class="text-2xl font-semibold text-gray-400">FlowPay</span>
-                <span class="text-2xl font-semibold text-gray-400">Stackwise</span>
-                <span class="text-2xl font-semibold text-gray-400">Modular</span>
-                <span class="text-2xl font-semibold text-gray-400">Fundbase</span>
+    <section class="py-16 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-center text-gray-500 text-sm font-medium mb-10">TRUSTED BY LEADING PLATFORMS</p>
+            <div class="flex flex-wrap justify-center items-center gap-x-16 gap-y-8">
+                <span class="text-2xl font-bold text-gray-300 hover:text-gray-400 transition">Ramp</span>
+                <span class="text-2xl font-bold text-gray-300 hover:text-gray-400 transition">Mercury</span>
+                <span class="text-2xl font-bold text-gray-300 hover:text-gray-400 transition">Deel</span>
+                <span class="text-2xl font-bold text-gray-300 hover:text-gray-400 transition">Gusto</span>
+                <span class="text-2xl font-bold text-gray-300 hover:text-gray-400 transition">Brex</span>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="products" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto">
+    <section id="products" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Everything you need to embed finance</h2>
+                <p class="text-indigo-600 font-semibold mb-4">PRODUCTS</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Everything you need to embed finance</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">One platform, one integration. Launch accounts, cards, and payments with our unified API.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover transition-all duration-300">
-                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Virtual Cards</h3>
-                    <p class="text-gray-600 leading-relaxed">Issue virtual and physical cards instantly. Full control over spend limits, categories, and real-time notifications.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Card Issuing</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Issue virtual and physical cards instantly. Full control over spend limits, merchant categories, and real-time notifications.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-700 flex items-center gap-1">
+                        Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover transition-all duration-300">
-                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Bank Accounts</h3>
-                    <p class="text-gray-600 leading-relaxed">FDIC-insured accounts for your customers. Multi-currency support, instant ACH, and wire transfers.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Bank Accounts</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">FDIC-insured accounts for your customers. Multi-currency support, instant ACH, and international wire transfers.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-700 flex items-center gap-1">
+                        Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover transition-all duration-300">
-                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="bg-white p-8 rounded-2xl border border-gray-200 card-hover transition-all duration-300">
+                    <div class="w-14 h-14 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Instant Payments</h3>
-                    <p class="text-gray-600 leading-relaxed">Real-time payments and settlements. Same-day ACH, RTP, and international transfers via SWIFT.</p>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Instant Payments</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">Real-time payments and settlements. Same-day ACH, RTP, FedNow, and international transfers via SWIFT.</p>
+                    <a href="#" class="text-indigo-600 font-medium hover:text-indigo-700 flex items-center gap-1">
+                        Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -114,38 +187,92 @@
 
     <!-- Stats Section -->
     <section class="py-20 px-6 gradient-bg">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 text-center text-white">
                 <div>
-                    <div class="text-4xl md:text-5xl font-bold mb-2">$4.2B</div>
-                    <div class="text-white/80">Processed annually</div>
+                    <div class="text-5xl md:text-6xl font-extrabold mb-2">$4.2B</div>
+                    <div class="text-indigo-200">Processed annually</div>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-bold mb-2">99.99%</div>
-                    <div class="text-white/80">Uptime SLA</div>
+                    <div class="text-5xl md:text-6xl font-extrabold mb-2">99.99%</div>
+                    <div class="text-indigo-200">Uptime SLA</div>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-bold mb-2">180+</div>
-                    <div class="text-white/80">Platform customers</div>
+                    <div class="text-5xl md:text-6xl font-extrabold mb-2">180+</div>
+                    <div class="text-indigo-200">Platform customers</div>
                 </div>
                 <div>
-                    <div class="text-4xl md:text-5xl font-bold mb-2">47ms</div>
-                    <div class="text-white/80">Avg API response</div>
+                    <div class="text-5xl md:text-6xl font-extrabold mb-2">47ms</div>
+                    <div class="text-indigo-200">Avg API response</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developers Section -->
+    <section id="developers" class="py-24 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <p class="text-indigo-600 font-semibold mb-4">FOR DEVELOPERS</p>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Built for engineers,<br>by engineers</h2>
+                    <p class="text-xl text-gray-600 mb-8">Clean APIs, comprehensive SDKs, and documentation that actually helps. Integrate in days, not months.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700">RESTful APIs with comprehensive OpenAPI specs</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700">SDKs for Node.js, Python, Ruby, Go, and more</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700">Webhooks for real-time event notifications</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                            <span class="text-gray-700">Sandbox environment with test data</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="gradient-bg text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition inline-flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        Read the Docs
+                    </a>
+                </div>
+                <div class="bg-gray-900 rounded-2xl p-6 shadow-2xl">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        <span class="text-xs text-gray-500 ml-2">Terminal</span>
+                    </div>
+                    <pre class="text-sm text-gray-300 font-mono overflow-x-auto"><code><span class="text-gray-500"># Install the SDK</span>
+<span class="text-green-400">$</span> npm install @vero/node
+
+<span class="text-gray-500"># Initialize the client</span>
+<span class="text-purple-400">import</span> Vero <span class="text-purple-400">from</span> <span class="text-amber-400">'@vero/node'</span>;
+
+<span class="text-purple-400">const</span> vero = <span class="text-purple-400">new</span> <span class="text-blue-400">Vero</span>({
+  apiKey: process.env.<span class="text-amber-400">VERO_API_KEY</span>
+});
+
+<span class="text-gray-500"># You're ready to go!</span></code></pre>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-6">
+    <section class="py-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Ready to embed finance in your product?</h2>
-            <p class="text-xl text-gray-600 mb-8">Get started in minutes with our developer-friendly APIs and sandbox environment.</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Ready to embed finance<br>in your product?</h2>
+            <p class="text-xl text-gray-600 mb-10">Get started in minutes with our developer-friendly APIs and sandbox environment.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#" class="gradient-bg text-white px-8 py-4 rounded-lg font-medium hover:opacity-90 transition">
+                <a href="#" class="gradient-bg text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition shadow-lg shadow-indigo-500/25">
                     Create Free Account
                 </a>
-                <a href="#" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-medium hover:bg-gray-50 transition">
+                <a href="#" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition">
                     Talk to Sales
                 </a>
             </div>
@@ -154,29 +281,40 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-16 px-6">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-5 gap-8 mb-12">
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+                        <div class="w-9 h-9 gradient-bg rounded-lg flex items-center justify-center">
                             <span class="text-white font-bold text-lg">V</span>
                         </div>
-                        <span class="text-xl font-semibold text-white">Vero Financial</span>
+                        <span class="text-xl font-semibold text-white">Vero<span class="text-indigo-400">Financial</span></span>
                     </div>
-                    <p class="text-gray-500 leading-relaxed">Building the infrastructure layer for embedded finance. Backed by leading investors.</p>
+                    <p class="text-gray-500 leading-relaxed mb-6">Building the infrastructure layer for embedded finance. Backed by Sequoia, Index Ventures, and Ribbit Capital.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="text-gray-500 hover:text-white transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-white transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-white transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Products</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white transition">Cards</a></li>
-                        <li><a href="#" class="hover:text-white transition">Accounts</a></li>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Card Issuing</a></li>
+                        <li><a href="#" class="hover:text-white transition">Bank Accounts</a></li>
                         <li><a href="#" class="hover:text-white transition">Payments</a></li>
                         <li><a href="#" class="hover:text-white transition">Compliance</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm">
+                    <ul class="space-y-3 text-sm">
                         <li><a href="about.html" class="hover:text-white transition">About</a></li>
                         <li><a href="careers.html" class="hover:text-white transition">Careers</a></li>
                         <li><a href="#" class="hover:text-white transition">Blog</a></li>
@@ -185,16 +323,21 @@
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white transition">Privacy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
                         <li><a href="#" class="hover:text-white transition">Security</a></li>
+                        <li><a href="#" class="hover:text-white transition">Compliance</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-sm">© 2024 Vero Financial, Inc. All rights reserved.</p>
-                <p class="text-sm mt-2 md:mt-0">SOC 2 Type II · PCI-DSS Level 1 · GDPR Compliant</p>
+                <div class="flex items-center gap-4 mt-4 md:mt-0">
+                    <span class="text-xs bg-gray-800 px-3 py-1 rounded-full">SOC 2 Type II</span>
+                    <span class="text-xs bg-gray-800 px-3 py-1 rounded-full">PCI-DSS Level 1</span>
+                    <span class="text-xs bg-gray-800 px-3 py-1 rounded-full">GDPR</span>
+                </div>
             </div>
         </div>
     </footer>
