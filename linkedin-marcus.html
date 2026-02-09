@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Chen | LinkedIn</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f3f2ef;
+            color: #000000e6;
+        }
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            color: #0a66c2;
+            font-size: 34px;
+            font-weight: 700;
+        }
+        .nav-items {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-item {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+        .nav-item svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 2px;
+        }
+        .container {
+            max-width: 1128px;
+            margin: 24px auto;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 24px;
+            padding: 0 24px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+        .profile-header {
+            position: relative;
+        }
+        .cover-photo {
+            height: 196px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .profile-photo {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            position: absolute;
+            bottom: -76px;
+            left: 24px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 48px;
+            font-weight: 600;
+        }
+        .profile-info {
+            padding: 88px 24px 24px;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .headline {
+            font-size: 16px;
+            color: #000000e6;
+            margin-bottom: 8px;
+        }
+        .location {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .connections {
+            font-size: 14px;
+            color: #0a66c2;
+            font-weight: 600;
+        }
+        .actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .btn {
+            padding: 6px 16px;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #0a66c2;
+            color: #fff;
+            border: none;
+        }
+        .btn-secondary {
+            background: #fff;
+            color: #0a66c2;
+            border: 1px solid #0a66c2;
+        }
+        .section {
+            padding: 24px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .about-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #000000e6;
+        }
+        .experience-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .company-logo {
+            width: 48px;
+            height: 48px;
+            background: #f3f2ef;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #666;
+            font-size: 14px;
+        }
+        .experience-details h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .experience-details .company {
+            font-size: 14px;
+            color: #000000e6;
+        }
+        .experience-details .duration {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .experience-details .description {
+            font-size: 14px;
+            color: #000000e6;
+            line-height: 1.4;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-tag {
+            background: #f3f2ef;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 14px;
+        }
+        .sidebar-card {
+            padding: 16px;
+        }
+        .sidebar-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .sidebar-item {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .sidebar-item img {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            background: #e0e0e0;
+        }
+        .sidebar-item .info {
+            font-size: 14px;
+        }
+        .sidebar-item .info .title {
+            font-weight: 600;
+        }
+        .sidebar-item .info .sub {
+            color: #666;
+            font-size: 12px;
+        }
+        .badge {
+            background: #e8f4fd;
+            color: #0a66c2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .verification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #e8f5e9;
+            color: #1b5e20;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div style="display: flex; align-items: center; gap: 16px;">
+            <span class="logo">in</span>
+            <input type="text" placeholder="Search" style="padding: 8px 16px; border-radius: 4px; border: none; background: #eef3f8; width: 280px;">
+        </div>
+        <div class="nav-items">
+            <div class="nav-item">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7 11 7z"/></svg>
+                Home
+            </div>
+            <div class="nav-item">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 16v6H3v-6a3 3 0 013-3h3a3 3 0 013 3zm5.5-3A3.5 3.5 0 1014 9.5a3.5 3.5 0 003.5 3.5zm1 2h-2a2.5 2.5 0 00-2.5 2.5V22h7v-4.5a2.5 2.5 0 00-2.5-2.5zM7.5 8A4.5 4.5 0 1012 3.5 4.49 4.49 0 007.5 8z"/></svg>
+                Network
+            </div>
+            <div class="nav-item">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z"/></svg>
+                Jobs
+            </div>
+            <div class="nav-item">
+                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M16 4H8a7 7 0 000 14h4v4l8.16-5.39A6.78 6.78 0 0023 11a7 7 0 00-7-7zm-8 8.25A1.25 1.25 0 119.25 11 1.25 1.25 0 018 12.25zm4 0A1.25 1.25 0 1113.25 11 1.25 1.25 0 0112 12.25zm4 0A1.25 1.25 0 1117.25 11 1.25 1.25 0 0116 12.25z"/></svg>
+                Messaging
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <main>
+            <!-- Profile Card -->
+            <div class="card">
+                <div class="profile-header">
+                    <div class="cover-photo"></div>
+                    <div class="profile-photo">MC</div>
+                </div>
+                <div class="profile-info">
+                    <h1 class="name">Marcus Chen</h1>
+                    <p class="headline">Senior DevOps Engineer | Kubernetes | AWS | Terraform | Building reliable infrastructure for fintech</p>
+                    <p class="location">Austin, Texas, United States · <a href="#" style="color: #0a66c2;">Contact info</a></p>
+                    <p class="connections">500+ connections</p>
+                    <div class="actions">
+                        <button class="btn btn-primary">Connect</button>
+                        <button class="btn btn-secondary">Message</button>
+                        <button class="btn btn-secondary">More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="card" style="margin-top: 8px;">
+                <div class="section">
+                    <h2 class="section-title">About</h2>
+                    <p class="about-text">
+                        DevOps engineer passionate about building scalable, secure infrastructure for fintech companies. 6+ years of experience designing and maintaining cloud-native systems that process millions of transactions daily.
+                        <br><br>
+                        Specialties: Kubernetes orchestration, Infrastructure as Code, CI/CD optimization, compliance automation (PCI-DSS, SOC 2).
+                        <br><br>
+                        Currently exploring new opportunities where I can contribute to building reliable infrastructure that enables engineering teams to ship faster.
+                    </p>
+                    <div class="verification-badge">
+                        ✓ Open to work · DevOps Engineer roles
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="card" style="margin-top: 8px;">
+                <div class="section">
+                    <h2 class="section-title">Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="company-logo">PF</div>
+                        <div class="experience-details">
+                            <h3>Senior DevOps Engineer</h3>
+                            <p class="company">PaymentFlow Inc. · Full-time</p>
+                            <p class="duration">Jan 2021 - Nov 2023 · 2 yrs 11 mos</p>
+                            <p class="duration">San Francisco Bay Area · Remote</p>
+                            <p class="description">
+                                • Led infrastructure team supporting 2M+ daily payment transactions across 3 AWS regions<br>
+                                • Architected GitOps deployment pipeline using ArgoCD, increasing deployment frequency from weekly to 15+ deploys/day<br>
+                                • Achieved PCI-DSS Level 1 certification through infrastructure compliance automation<br>
+                                • Reduced infrastructure costs by 40% ($1.2M annually) through Kubernetes optimization
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="company-logo">CS</div>
+                        <div class="experience-details">
+                            <h3>DevOps Engineer</h3>
+                            <p class="company">CloudScale Solutions · Full-time <span class="badge">Acquired</span></p>
+                            <p class="duration">Jun 2018 - Dec 2020 · 2 yrs 7 mos</p>
+                            <p class="duration">Austin, Texas</p>
+                            <p class="description">
+                                • Built CI/CD pipelines serving 40+ microservices using Jenkins and GitHub Actions<br>
+                                • Managed Terraform codebase for 200+ AWS resources with automated drift detection<br>
+                                • Reduced MTTR from 45 minutes to 8 minutes through improved observability<br>
+                                • Company acquired by Rackspace in 2021
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="company-logo">TS</div>
+                        <div class="experience-details">
+                            <h3>Junior Systems Administrator</h3>
+                            <p class="company">TechStart Inc. · Full-time</p>
+                            <p class="duration">Aug 2016 - May 2018 · 1 yr 10 mos</p>
+                            <p class="duration">Austin, Texas</p>
+                            <p class="description">
+                                • Maintained hybrid cloud infrastructure (AWS + on-prem VMware)<br>
+                                • Automated routine operations using Python and Bash scripting
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="card" style="margin-top: 8px;">
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="experience-item">
+                        <div class="company-logo">UT</div>
+                        <div class="experience-details">
+                            <h3>University of Texas at Austin</h3>
+                            <p class="company">Bachelor of Science - BS, Computer Science</p>
+                            <p class="duration">2012 - 2016</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="card" style="margin-top: 8px;">
+                <div class="section">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="skills-list">
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">ArgoCD</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Datadog</span>
+                        <span class="skill-tag">Prometheus</span>
+                        <span class="skill-tag">PCI-DSS</span>
+                        <span class="skill-tag">SOC 2</span>
+                        <span class="skill-tag">GitOps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="card" style="margin-top: 8px;">
+                <div class="section">
+                    <h2 class="section-title">Licenses & certifications</h2>
+                    <div class="experience-item">
+                        <div class="company-logo" style="background: #ff9900; color: white;">AWS</div>
+                        <div class="experience-details">
+                            <h3>AWS Certified DevOps Engineer - Professional</h3>
+                            <p class="company">Amazon Web Services (AWS)</p>
+                            <p class="duration">Issued Mar 2023</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-logo" style="background: #326ce5; color: white;">K8s</div>
+                        <div class="experience-details">
+                            <h3>Certified Kubernetes Administrator (CKA)</h3>
+                            <p class="company">The Linux Foundation</p>
+                            <p class="duration">Issued Aug 2022</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-logo" style="background: #7b42bc; color: white;">TF</div>
+                        <div class="experience-details">
+                            <h3>HashiCorp Certified: Terraform Associate</h3>
+                            <p class="company">HashiCorp</p>
+                            <p class="duration">Issued Jan 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="card sidebar-card">
+                <h3>People also viewed</h3>
+                <div class="sidebar-item">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">JL</div>
+                    <div class="info">
+                        <div class="title">Jennifer Liu</div>
+                        <div class="sub">SRE at Stripe</div>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">AK</div>
+                    <div class="info">
+                        <div class="title">Alex Kumar</div>
+                        <div class="sub">DevOps Lead at Plaid</div>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">RG</div>
+                    <div class="info">
+                        <div class="title">Ryan Garcia</div>
+                        <div class="sub">Platform Engineer at Square</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card sidebar-card" style="margin-top: 8px;">
+                <h3>People you may know</h3>
+                <div class="sidebar-item">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">SM</div>
+                    <div class="info">
+                        <div class="title">Sarah Martinez</div>
+                        <div class="sub">CEO at Vero Financial</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div style="text-align: center; padding: 40px; color: #666; font-size: 12px;">
+        <strong>⚠️ THIS IS A FAKE PROFILE FOR DEMONSTRATION PURPOSES ONLY ⚠️</strong><br>
+        Created for CISO presentation on AI-powered hiring attacks
+    </div>
+</body>
+</html>
